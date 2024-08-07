@@ -1,0 +1,69 @@
+org: cloudfinal
+app: final
+service: serverless-crud-api
+
+provider:
+  name: aws
+  runtime: python3.8
+  region: us-east-1
+  environment:
+    DYNAMODB_TABLE: favoriteFoods
+    S3_BUCKET: my-favorite-foods
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: "arn:aws:dynamodb:us-east-1:747627084656:table/favoriteFoods"
+    - Effect: Allow
+      Action:
+        - s3:PutObject
+        - s3:GetObject
+      Resource: "arn:aws:s3:::my-favorite-foods/*"
+
+functions:
+  app:
+    handler: wsgi_handler.handler
+    events:
+      - http:
+          path: /
+          method: ANY
+          cors: true
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors: true
+    environment:
+      DYNAMODB_TABLE: ${self:provider.environment.DYNAMODB_TABLE}
+      S3_BUCKET: ${self:provider.environment.S3_BUCKET}
+
+plugins:
+  - serverless-wsgi
+  - serverless-python-requirements
+  - serverless-finch
+
+custom:
+  wsgi:
+    app: app.app
+    packRequirements: false
+  client:
+    bucketName: my-favorite-foods
+
+resources:
+  Resources:
+    FavoriteFoodsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: favoriteFoods
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1

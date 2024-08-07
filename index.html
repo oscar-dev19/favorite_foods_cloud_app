@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Foods CRUD App</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1, h2 { color: #333; }
+        form { margin-bottom: 20px; }
+        input[type="text"] { padding: 5px; margin-right: 10px; }
+        button { padding: 5px 10px; background-color: #007bff; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin-bottom: 10px; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Favorite Foods CRUD App</h1>
+    
+    <h2>Create Food</h2>
+    <form id="createForm">
+        <input type="text" id="foodName" placeholder="Food Name" required>
+        <button type="submit">Create</button>
+    </form>
+
+    <h2>Food List</h2>
+    <ul id="foodsList">
+        <!-- FOODS_DATA -->
+    </ul>
+
+    <div id="updateForm" style="display: none;">
+        <h2>Update Food</h2>
+        <form id="editForm">
+            <input type="hidden" id="editId">
+            <input type="text" id="editName" required>
+            <button type="submit">Update</button>
+            <button type="button" onclick="cancelEdit()">Cancel</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('createForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('foodName').value;
+            fetch('/fav_food', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `name=${encodeURIComponent(name)}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                location.reload();
+            })
+            .catch(error => console.error('Error:', error));
+        });
+
+        function deleteFood(id) {
+            if (confirm('Are you sure you want to delete this food?')) {
+                fetch(`/fav_food/${id}`, {
+                    method: 'DELETE'
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+                    location.reload();
+                })
+                .catch(error => console.error('Error:', error));
+            }
+        }
+
+        function editFood(id, name) {
+            document.getElementById('editId').value = id;
+            document.getElementById('editName').value = name;
+            document.getElementById('updateForm').style.display = 'block';
+        }
+
+        function cancelEdit() {
+            document.getElementById('updateForm').style.display = 'none';
+        }
+
+        document.getElementById('editForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const id = document.getElementById('editId').value;
+            const name = document.getElementById('editName').value;
+            fetch(`/fav_food/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name: name })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Food updated successfully');
+                location.reload();
+            })
+            .catch(error => console.error('Error:', error));
+        });
+
+        function refreshFoodList() {
+            fetch('/')
+            .then(response => response.text())
+            .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const newFoodsList = doc.getElementById('foodsList').innerHTML;
+                document.getElementById('foodsList').innerHTML = newFoodsList;
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        setInterval(refreshFoodList, 10000);
+    </script>
+</body>
+</html>
