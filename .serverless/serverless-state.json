@@ -205,7 +205,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-crud-api/dev/1722967691935-2024-08-06T18:08:11.935Z/serverless-crud-api.zip"
+                "S3Key": "serverless/serverless-crud-api/dev/1722992570590-2024-08-07T01:02:50.590Z/serverless-crud-api.zip"
               },
               "Handler": "wsgi_handler.handler",
               "Runtime": "python3.8",
@@ -229,14 +229,14 @@
               "AppLogGroup"
             ]
           },
-          "AppLambdaVersionGbOJtYRFAvRWQDSchCr5qkn921U4YqkMgiPFSs6xOE": {
+          "AppLambdaVersionIFagXEK4mkm6xFBeVenRCoC5Ils3BHRZ5sP5Xgin0k": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "AppLambdaFunction"
               },
-              "CodeSha256": "jPUc8ZRw32ALWEXYa89LeHCL9iLP4x5zw1PQVO0YNXk="
+              "CodeSha256": "iU4wdvmddhX1XJju0g9fHr1UlvdEjLI2NOVM4nBVpBY="
             }
           },
           "ApiGatewayRestApi": {
@@ -454,7 +454,7 @@
               "AppLambdaPermissionApiGateway"
             ]
           },
-          "ApiGatewayDeployment1722967683608": {
+          "ApiGatewayDeployment1722992560574": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -541,7 +541,7 @@
           "AppLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AppLambdaVersionGbOJtYRFAvRWQDSchCr5qkn921U4YqkMgiPFSs6xOE"
+              "Ref": "AppLambdaVersionIFagXEK4mkm6xFBeVenRCoC5Ils3BHRZ5sP5Xgin0k"
             },
             "Export": {
               "Name": "sls-serverless-crud-api-dev-AppLambdaFunctionQualifiedArn"
@@ -737,7 +737,7 @@
         "timeout": 6,
         "runtime": "python3.8",
         "vpc": {},
-        "versionLogicalId": "AppLambdaVersionGbOJtYRFAvRWQDSchCr5qkn921U4YqkMgiPFSs6xOE"
+        "versionLogicalId": "AppLambdaVersionIFagXEK4mkm6xFBeVenRCoC5Ils3BHRZ5sP5Xgin0k"
       }
     },
     "resources": {
@@ -797,7 +797,7 @@
     "artifact": "/Users/oscarlopez/Desktop/School/CSUSM/2024_Summer/CS_446/final/final copy 2/.serverless/serverless-crud-api.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/serverless-crud-api/dev/1722967691935-2024-08-06T18:08:11.935Z",
+    "artifactDirectoryName": "serverless/serverless-crud-api/dev/1722992570590-2024-08-07T01:02:50.590Z",
     "artifact": "serverless-crud-api.zip"
   }
 }

@@ -227,7 +227,7 @@
                         "S3Bucket": {
                           "Ref": "ServerlessDeploymentBucket"
                         },
-                        "S3Key": "serverless/serverless-crud-api/dev/1722967691935-2024-08-06T18:08:11.935Z/serverless-crud-api.zip"
+                        "S3Key": "serverless/serverless-crud-api/dev/1722992570590-2024-08-07T01:02:50.590Z/serverless-crud-api.zip"
                       },
                       "Handler": "wsgi_handler.handler",
                       "Runtime": "python3.8",
@@ -251,14 +251,14 @@
                       "AppLogGroup"
                     ]
                   },
-                  "AppLambdaVersionGbOJtYRFAvRWQDSchCr5qkn921U4YqkMgiPFSs6xOE": {
+                  "AppLambdaVersionIFagXEK4mkm6xFBeVenRCoC5Ils3BHRZ5sP5Xgin0k": {
                     "Type": "AWS::Lambda::Version",
                     "DeletionPolicy": "Retain",
                     "Properties": {
                       "FunctionName": {
                         "Ref": "AppLambdaFunction"
                       },
-                      "CodeSha256": "jPUc8ZRw32ALWEXYa89LeHCL9iLP4x5zw1PQVO0YNXk="
+                      "CodeSha256": "iU4wdvmddhX1XJju0g9fHr1UlvdEjLI2NOVM4nBVpBY="
                     }
                   },
                   "ApiGatewayRestApi": {
@@ -476,7 +476,7 @@
                       "AppLambdaPermissionApiGateway"
                     ]
                   },
-                  "ApiGatewayDeployment1722967683608": {
+                  "ApiGatewayDeployment1722992560574": {
                     "Type": "AWS::ApiGateway::Deployment",
                     "Properties": {
                       "RestApiId": {
@@ -563,7 +563,7 @@
                   "AppLambdaFunctionQualifiedArn": {
                     "Description": "Current Lambda function version",
                     "Value": {
-                      "Ref": "AppLambdaVersionGbOJtYRFAvRWQDSchCr5qkn921U4YqkMgiPFSs6xOE"
+                      "Ref": "AppLambdaVersionIFagXEK4mkm6xFBeVenRCoC5Ils3BHRZ5sP5Xgin0k"
                     },
                     "Export": {
                       "Name": "sls-serverless-crud-api-dev-AppLambdaFunctionQualifiedArn"
@@ -744,7 +744,7 @@
                 "timeout": 6,
                 "runtime": "python3.8",
                 "vpc": {},
-                "versionLogicalId": "AppLambdaVersionGbOJtYRFAvRWQDSchCr5qkn921U4YqkMgiPFSs6xOE"
+                "versionLogicalId": "AppLambdaVersionIFagXEK4mkm6xFBeVenRCoC5Ils3BHRZ5sP5Xgin0k"
               }
             },
             "plugins": [
@@ -1029,7 +1029,7 @@
                         "S3Bucket": {
                           "Ref": "ServerlessDeploymentBucket"
                         },
-                        "S3Key": "serverless/serverless-crud-api/dev/1722967691935-2024-08-06T18:08:11.935Z/serverless-crud-api.zip"
+                        "S3Key": "serverless/serverless-crud-api/dev/1722992570590-2024-08-07T01:02:50.590Z/serverless-crud-api.zip"
                       },
                       "Handler": "wsgi_handler.handler",
                       "Runtime": "python3.8",
@@ -1053,14 +1053,14 @@
                       "AppLogGroup"
                     ]
                   },
-                  "AppLambdaVersionGbOJtYRFAvRWQDSchCr5qkn921U4YqkMgiPFSs6xOE": {
+                  "AppLambdaVersionIFagXEK4mkm6xFBeVenRCoC5Ils3BHRZ5sP5Xgin0k": {
                     "Type": "AWS::Lambda::Version",
                     "DeletionPolicy": "Retain",
                     "Properties": {
                       "FunctionName": {
                         "Ref": "AppLambdaFunction"
                       },
-                      "CodeSha256": "jPUc8ZRw32ALWEXYa89LeHCL9iLP4x5zw1PQVO0YNXk="
+                      "CodeSha256": "iU4wdvmddhX1XJju0g9fHr1UlvdEjLI2NOVM4nBVpBY="
                     }
                   },
                   "ApiGatewayRestApi": {
@@ -1278,7 +1278,7 @@
                       "AppLambdaPermissionApiGateway"
                     ]
                   },
-                  "ApiGatewayDeployment1722967683608": {
+                  "ApiGatewayDeployment1722992560574": {
                     "Type": "AWS::ApiGateway::Deployment",
                     "Properties": {
                       "RestApiId": {
@@ -1365,7 +1365,7 @@
                   "AppLambdaFunctionQualifiedArn": {
                     "Description": "Current Lambda function version",
                     "Value": {
-                      "Ref": "AppLambdaVersionGbOJtYRFAvRWQDSchCr5qkn921U4YqkMgiPFSs6xOE"
+                      "Ref": "AppLambdaVersionIFagXEK4mkm6xFBeVenRCoC5Ils3BHRZ5sP5Xgin0k"
                     },
                     "Export": {
                       "Name": "sls-serverless-crud-api-dev-AppLambdaFunctionQualifiedArn"
@@ -1546,7 +1546,7 @@
                 "timeout": 6,
                 "runtime": "python3.8",
                 "vpc": {},
-                "versionLogicalId": "AppLambdaVersionGbOJtYRFAvRWQDSchCr5qkn921U4YqkMgiPFSs6xOE"
+                "versionLogicalId": "AppLambdaVersionIFagXEK4mkm6xFBeVenRCoC5Ils3BHRZ5sP5Xgin0k"
               }
             },
             "plugins": [
@@ -1831,7 +1831,7 @@
                   "S3Bucket": {
                     "Ref": "ServerlessDeploymentBucket"
                   },
-                  "S3Key": "serverless/serverless-crud-api/dev/1722967691935-2024-08-06T18:08:11.935Z/serverless-crud-api.zip"
+                  "S3Key": "serverless/serverless-crud-api/dev/1722992570590-2024-08-07T01:02:50.590Z/serverless-crud-api.zip"
                 },
                 "Handler": "wsgi_handler.handler",
                 "Runtime": "python3.8",
@@ -1855,14 +1855,14 @@
                 "AppLogGroup"
               ]
             },
-            "AppLambdaVersionGbOJtYRFAvRWQDSchCr5qkn921U4YqkMgiPFSs6xOE": {
+            "AppLambdaVersionIFagXEK4mkm6xFBeVenRCoC5Ils3BHRZ5sP5Xgin0k": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "AppLambdaFunction"
                 },
-                "CodeSha256": "jPUc8ZRw32ALWEXYa89LeHCL9iLP4x5zw1PQVO0YNXk="
+                "CodeSha256": "iU4wdvmddhX1XJju0g9fHr1UlvdEjLI2NOVM4nBVpBY="
               }
             },
             "ApiGatewayRestApi": {
@@ -2080,7 +2080,7 @@
                 "AppLambdaPermissionApiGateway"
               ]
             },
-            "ApiGatewayDeployment1722967683608": {
+            "ApiGatewayDeployment1722992560574": {
               "Type": "AWS::ApiGateway::Deployment",
               "Properties": {
                 "RestApiId": {
@@ -2167,7 +2167,7 @@
             "AppLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "AppLambdaVersionGbOJtYRFAvRWQDSchCr5qkn921U4YqkMgiPFSs6xOE"
+                "Ref": "AppLambdaVersionIFagXEK4mkm6xFBeVenRCoC5Ils3BHRZ5sP5Xgin0k"
               },
               "Export": {
                 "Name": "sls-serverless-crud-api-dev-AppLambdaFunctionQualifiedArn"
@@ -2348,7 +2348,7 @@
           "timeout": 6,
           "runtime": "python3.8",
           "vpc": {},
-          "versionLogicalId": "AppLambdaVersionGbOJtYRFAvRWQDSchCr5qkn921U4YqkMgiPFSs6xOE"
+          "versionLogicalId": "AppLambdaVersionIFagXEK4mkm6xFBeVenRCoC5Ils3BHRZ5sP5Xgin0k"
         }
       },
       "plugins": [
@@ -2400,7 +2400,7 @@
     "options": {},
     "error": null,
     "params": {},
-    "machineId": "4aa6f46cb0f2d78531c6f29fea721246",
+    "machineId": "ac7df07210e3d7147820a2e843403dce",
     "accessKeyV2": "<REDACTED>",
     "accessKeyV1": "<REDACTED>",
     "orgId": "5fb3be83-a7a9-42ad-8391-dcd5d1eb40b8",
@@ -2431,12 +2431,12 @@
     "serviceProviderAwsCfStackName": "serverless-crud-api-dev",
     "serviceProviderAwsCfStackId": "arn:aws:cloudformation:us-east-1:747627084656:stack/serverless-crud-api-dev/d86e3cf0-541e-11ef-982e-12b978df9cf1",
     "serviceProviderAwsCfStackCreated": "2024-08-06T18:08:12.904Z",
-    "serviceProviderAwsCfStackUpdated": "2024-08-06T18:08:54.162Z",
+    "serviceProviderAwsCfStackUpdated": "2024-08-07T01:03:12.644Z",
     "serviceProviderAwsCfStackStatus": "UPDATE_COMPLETE",
     "serviceProviderAwsCfStackOutputs": [
       {
         "OutputKey": "AppLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:747627084656:function:serverless-crud-api-dev-app:68",
+        "OutputValue": "arn:aws:lambda:us-east-1:747627084656:function:serverless-crud-api-dev-app:69",
         "Description": "Current Lambda function version",
         "ExportName": "sls-serverless-crud-api-dev-AppLambdaFunctionQualifiedArn"
       },
